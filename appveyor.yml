@@ -5,7 +5,7 @@ branches:
     - master
 
 image: Visual Studio 2017
-clone_folder: c:\projects\blackbone
+clone_folder: c:\projects\xenos
 
 platform: 
   - Win32
@@ -13,13 +13,11 @@ platform:
 
 configuration: 
   - Debug
-  - Debug(DLL)
   - Release
-  - Release(DLL)
   
+install:
+  - cmd: git submodule update --init --recursive
+ 
 build:
   parallel: true
-  project: BlackBone.sln 
-
-skip_commits:
-  message: /Driver/
+  project: Xenos.sln
